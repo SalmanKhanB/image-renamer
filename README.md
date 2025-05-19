@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/banner.png" width="800" alt="Flag Renamer Banner">
+  <img src="images/banner.png" width="500" alt="Flag Renamer Banner">
 </p>
 
 <h1 align="center">🇺🇳 Flag File Normalizer</h1>
@@ -13,7 +13,7 @@
 ## 📸 Visual Transformation
 
 ### Before: Mixed Format Chaos
-<img src="before.png" width="600" alt="Before renaming example">
+<img src="images/before.png" width="600" alt="Before renaming example">
 
 Common issues fixed:
 - Random capitalization ("Algeria" vs "belarus")
@@ -21,7 +21,7 @@ Common issues fixed:
 - Inconsistent extensions (".PNG" vs ".jpg")
 
 ### After: Perfect Consistency
-<img src="after.png" width="600" alt="After renaming example">
+<img src="images/after.png" width="600" alt="After renaming example">
 
 Results you get:
 - Uniform lowercase ("austria" not "Austria")
@@ -135,6 +135,86 @@ Before	After
 ## 👨‍💻 About the Developer
 
 Created by [Salman Khan](https://www.linkedin.com/in/salman-khan-458489154/) 
+
+## 🚀 How to Run
+
+### Prerequisites
+- Java Development Kit (JDK) 8 or higher
+- Command line terminal (PowerShell, Command Prompt, or Terminal)
+
+### Step-by-Step Guide
+
+1. **Download the Tool**
+   ```bash
+   git clone https://github.com/yourusername/image-renamer.git
+   cd image-renamer
+   ```
+
+2. **Prepare Your Images**
+   - Create a folder for your images (e.g., `input_images/`)
+   - Place all your flag images in this folder
+   - Supported formats: PNG, SVG, JPG, WebP
+
+3. **Open Terminal in Project Directory**
+   ```bash
+   # Navigate to the directory containing ImageRenamer.java
+   cd path/to/image-renamer
+   ```
+
+4. **Compile the Program**
+   ```bash
+   # Make sure you're in the directory containing ImageRenamer.java
+   # Then compile the Java file
+   javac ImageRenamer.java
+   
+   # This will create ImageRenamer.class in the same directory
+   ```
+
+5. **Run the Tool**
+   ```bash
+   # Run the program using the .class file
+   java ImageRenamer input_images/
+   ```
+
+6. **View Results**
+   - Processed images will be saved in `output_images/` folder
+   - Check the console for progress and results
+   - Example output:
+     ```
+     Processing images...
+     ✔ Renamed: "United States.png" → "united_states.png"
+     ✔ Renamed: "South Korea.jpg" → "south_korea.jpg"
+     ✔ Renamed: "Côte d'Ivoire.gif" → "cote_d_ivoire.gif"
+     ✅ Process completed: 3 files renamed
+     ```
+
+### Command Line Options
+```bash
+java -jar image-renamer.jar [options] <input_directory>
+
+Options:
+  --output-dir <dir>    Specify output directory (default: output_images/)
+  --format <format>     Set output format (default: png)
+  --recursive          Process subdirectories
+  --dry-run            Show what would be renamed without making changes
+  --help               Show help message
+```
+
+### Example Usage
+```bash
+# Basic usage
+java -jar image-renamer.jar flags/
+
+# Custom output directory
+java -jar image-renamer.jar --output-dir processed_flags/ flags/
+
+# Process subdirectories
+java -jar image-renamer.jar --recursive flags/
+
+# Preview changes without renaming
+java -jar image-renamer.jar --dry-run flags/
+```
+ 
 ```
 
 
