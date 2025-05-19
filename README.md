@@ -1,148 +1,140 @@
 <p align="center">
-  <img src="images/banner.png" width="800" alt="ImageRenamer Banner">
+  <img src="images/banner.png" width="800" alt="Flag Renamer Banner">
 </p>
 
-<h1 align="center">🖼️ ImageRenamer</h1>
+<h1 align="center">🇺🇳 Flag File Normalizer</h1>
 <p align="center">
-  <b>Batch Normalize Image Filenames for Clean Project Assets</b><br>
-  <sub>Made with ❤️ for Developers & Designers</sub>
+  <b>From inconsistent naming to perfectly standardized flag files</b><br>
+  <sub>Transform "United Kingdom.png" → "united_kingdom.png" with one command</sub>
 </p>
 
 ---
 
-## ✨ Features
+## 📸 Visual Transformation
 
-| **Functionality**         | **Supported Formats**          | **Operations**                      |
-|---------------------------|---------------------------------|--------------------------------------|
-| Lowercase conversion      | `.jpg` `.jpeg` `.png` `.gif`   | Batch rename all matching files      |
-| Space replacement         | `.bmp` `.webp`                 | Non-destructive file operations      |
-| Extension normalization   |                                 | Smart case detection                 |
+### Before: Mixed Format Chaos
+<img src="before.png" width="600" alt="Before renaming example">
+
+Common issues fixed:
+- Random capitalization ("Algeria" vs "belarus")
+- Spaces in filenames ("aland islands")
+- Inconsistent extensions (".PNG" vs ".jpg")
+
+### After: Perfect Consistency
+<img src="after.png" width="600" alt="After renaming example">
+
+Results you get:
+- Uniform lowercase ("austria" not "Austria")
+- Spaces → underscores ("british_virgin_islands")
+- Standardized extensions (all .png)
 
 ---
 
-## 🚀 Quick Start
+## 🚀 How It Works
 
-### Prerequisites
-- Java Runtime Environment (JRE 8+)
-- Terminal/Command Prompt access
+```java
+// Sample transformation logic:
+String original = "Czech Republic.PNG";
+String normalized = original.toLowerCase().replace(" ", "_");
+// Result: "czech_republic.png"
+💻 Usage
+Place your flag images in a folder
 
-### Installation
-```bash
-# 1. Clone repository
-git clone https://github.com/yourusername/ImageRenamer.git
+Run the tool:
 
-# 2. Navigate to project directory
-cd ImageRenamer
-
-# 3. Compile (only first time)
-javac ImageRenamer.java
-Usage
 bash
-# Place images in project root directory then run:
 java ImageRenamer
+Watch the magic happen:
 
-# Sample output:
-✅ Renamed: "British Virgin Islands.jpg" → "british_virgin_islands.jpg"
-❌ Failed: "readme.txt" (not an image)
-📸 Before & After Examples
-File Transformation
-diff
-- Czech Republic.PNG
-+ czech_republic.png
+Processing flag images...
+✔ Renamed: "United States.png" → "united_states.png"
+✔ Renamed: "South Korea.jpg" → "south_korea.jpg"
+✔ Renamed: "Côte d'Ivoire.gif" → "cote_d_ivoire.gif"
+🌟 Key Features
+Before	After	Benefit
+<img src="before.png" width="200">	<img src="after.png" width="200">	Consistent naming for easier coding
+Photo 1.JPG	photo_1.jpg	Lowercase standardization
+SCREENSHOT 2023.PNG	screenshot_2023.png	Space handling
+🛠️ Technical Details
+Supported Formats:
 
-- SCREENSHOT 2023.JPEG 
-+ screenshot_2023.jpeg
-Directory Structure
-raw_assets/                           processed_assets/
-├── Photo 1.JPG                       ├── photo_1.jpg
-├── IMG_2023.PNG                      ├── img_2023.png
-└── mixed CASE.gif                    └── mixed_case.gif
-🛠️ Use Cases
-Ideal For
-Category	Example Implementation
-📱 Mobile Development	Android drawable assets
-🌐 Web Projects	CMS image uploads
-🎨 Design Systems	Icon library standardization
-🌍 Localization	Country flag assets
-Common Scenarios
-Preparing app store screenshots
+PNG (recommended for flags)
 
-Organizing e-commerce product images
+SVG (vector support)
 
-Processing user-uploaded content
+JPG/WebP (fallback formats)
 
-Converting designer exports to dev format
+Special Cases Handled:
 
-📂 Project Structure
-ImageRenamer/
-├── src/
-│   └── ImageRenamer.java         # Main application logic
-├── images/                       # Documentation assets
-│   ├── banner.png                # Header image
-│   ├── before.png                # Example input
-│   └── after.png                 # Example output
-├── LICENSE                       # MIT License
-└── README.md                     # This documentation
-🤝 Contributing
-Fork the repository
+bash
+"St. Kitts & Nevis"  → "st_kitts_and_nevis"
+"Åland Islands"      → "aland_islands"
+"São Tomé"          → "sao_tome"
+📂 Ideal Project Structure
+/flags/
+├── /raw/                  # Original mixed-format files
+│   ├── before.png         # Your source files
+│   └── Example Flag.JPG   
+│
+└── /processed/            # After running ImageRenamer
+    ├── after.png          # Consistent output
+    └── example_flag.jpg
+<p align="center"> <img src="banner.png" width="400" style="border: 1px solid #eee; margin-top: 20px;"> </p><details> <summary>🔄 Click to see full transformation example</summary>
+Before	After
+<img src="images/before.png" width="300">	<img src="images/after.png" width="300">
+</details> 
 
-Create a feature branch:
-git checkout -b feat/awesome-feature
+## 🧠 Use Cases
 
-Commit changes:
-git commit -m 'Add some awesome feature'
+### 🎯 Perfect for:
 
-Push to branch:
-git push origin feat/awesome-feature
+#### 🟢 Mobile & Web Development
+- **Android Development**
+  - Prepare `res/drawable/` folders for Android Studio
+  - Standardize asset names for Material Design components
+  - Batch process app icons and splash screens
 
-Open a Pull Request
+- **Flutter Projects**
+  - Organize assets in `assets/` directory
+  - Normalize image names for pubspec.yaml
+  - Prepare consistent asset references
 
-📜 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+- **React Native**
+  - Standardize image imports
+  - Normalize asset names for require() statements
+  - Prepare consistent image references
 
-<p align="center"> Need help? Open an issue or ⭐ star if useful! </p> ```
-Key features of this README:
+#### 🧩 Design & Development Workflow
+- **Dev-Design Handoff**
+  - Convert design asset names to developer-friendly format
+  - Maintain consistent naming across design tools (Figma, Sketch)
+  - Streamline asset delivery process
 
-Visual Hierarchy
+#### 📦 Asset Management
+- **UI Component Libraries**
+  - Batch cleanup for scalable UI projects
+  - Standardize icon collections
+  - Prepare consistent asset packages
 
-Banner image with proper dimensions
+- **Country Flag Collections**
+  - Normalize flag image names
+  - Prepare flag sets for internationalization
+  - Create consistent flag libraries
 
-Feature comparison table
+- **Icon Libraries**
+  - Standardize icon naming conventions
+  - Prepare icon sets for various platforms
+  - Create consistent icon packages
 
-Emoji-enhanced section headers
+### 💡 Benefits
+- **Time Saving**: Process hundreds of files in seconds
+- **Consistency**: Maintain uniform naming across projects
+- **Error Prevention**: Eliminate naming-related bugs
+- **Better Organization**: Create clean, predictable file structures
 
-Clear code blocks with syntax highlighting
+## 👨‍💻 About the Developer
 
-Practical Implementation Guides
+Created by [Salman Khan](https://www.linkedin.com/in/salman-khan-458489154/) 
+```
 
-Step-by-step installation
 
-Before/after code diffs
-
-Directory structure visualization
-
-Use Case Focus
-
-Implementation table for different scenarios
-
-Common real-world applications
-
-Developer-Friendly
-
-Clear contribution guidelines
-
-License information
-
-Project structure overview
-
-To complete your repository:
-
-Create /images directory with:
-
-banner.png (recommended 1280x640px)
-
-before.png & after.png comparison shots
-
-Add LICENSE file with MIT license text
-
-Place Java file in root directory for easy access
